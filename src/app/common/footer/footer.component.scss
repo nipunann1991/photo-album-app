@@ -1,0 +1,19 @@
+@import "../../../styles.scss";
+
+footer.footer{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-top: 1px $lighter-gray solid; 
+    background-color: $white; 
+
+    .footer-inner{
+
+        p{
+            text-align: center;
+
+            @include breakpoint($tablet){
+                text-align: right; 
+            }
+        }
+    }
+}

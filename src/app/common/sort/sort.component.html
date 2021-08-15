@@ -1,0 +1,6 @@
+<form [formGroup]="sortForm">
+    <label for="sort-by">Sort By: </label>
+    <select #sort formControlName="sortOrder" id="sort-by"  (change)='sortByTilte(sort.value)'>
+        <option *ngFor="let sort of sortVals" [value]="sort.id">{{sort?.title}}</option>
+    </select>
+</form>

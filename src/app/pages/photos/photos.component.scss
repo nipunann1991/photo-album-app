@@ -1,0 +1,26 @@
+@import "../../../styles.scss";
+
+.photos-page{
+
+    .photos-page-inner{
+
+        h2{
+            margin-bottom: 2rem;
+        }
+
+        ul.photos-list{
+            @include flex-wrap();  
+            justify-content: center;
+
+            @include breakpoint($tablet){
+                justify-content: end;
+            }
+
+            li.photo{
+                @include flex();   
+                margin-right: 1rem;
+                margin-bottom: 1rem; 
+            }
+        }
+    }
+}

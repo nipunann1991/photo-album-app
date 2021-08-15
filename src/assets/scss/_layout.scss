@@ -1,0 +1,78 @@
+// -----------------------------------------------------------------------------
+// This file contains all layout styles.
+// -----------------------------------------------------------------------------
+
+
+html{
+	font-size: 55%;
+
+	@include breakpoint($tablet){
+		font-size: 62.5%;
+	}
+}
+
+html, body{
+	height: 100%;
+}
+
+body{   
+	font-size: $base-font-size;	 
+	@include normal-font;
+}
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, h4{  
+	@include medium-font;
+}
+
+p{
+	font-size: $base-font-size;	
+	line-height: $base-font-size + 0.4 ;
+	margin-bottom: 0;
+}
+
+.container-fluid{ 
+	padding: 0 1.5rem;
+
+	@include breakpoint($tablet){
+		@include flex();
+		@include calc("width", "100% - 3rem");
+	}
+}
+.container{
+	max-width: 114rem;
+	flex-basis: 100%;
+	margin: 0 auto;
+}
+
+.row{
+	@include flex-wrap();  
+	margin-left: -1.5rem;
+	margin-right: -1.5rem;
+}
+
+.page{ 
+	padding-top: 10rem;
+	padding-bottom: 5rem;
+	@include calc("min-height","100% - 15rem");
+}
+
+.loader{
+	background-image: url("../images/loader.gif");
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+
+app-page-outlet{
+	@include flex(); 
+	flex-direction: column;
+	height: 100%;
+
+	main{
+		flex: 1; 
+	}
+}

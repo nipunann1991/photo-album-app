@@ -1,0 +1,77 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+@use 'sass:math';
+
+@mixin parent($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+@mixin clearfix() {
+  *zoom: 1;
+    &:before, &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    font-size: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  
+}
+ 
+@mixin breakpoint($context) { 
+    @media screen and (min-width: $context) { 
+        @content;
+    }
+}
+ 
+@mixin flex() {
+    display: -webkit-flex;
+    display: flex; 
+} 
+
+@mixin flex-align-center() {
+    @include flex();
+    align-items: center;
+}
+
+@mixin flex-wrap() {
+   @include flex();
+   flex-wrap: wrap;
+}
+
+@mixin truncate-text() { 
+    white-space: nowrap;  
+    overflow: hidden;
+    text-overflow: ellipsis;  
+}
+ 
+@mixin calc($key, $value) {
+    #{$key}: -webkit-calc(#{$value});
+    #{$key}: -moz-calc(#{$value});
+    #{$key}: calc(#{$value});
+}
+
+@mixin cols($val) {
+  flex: 0 0 auto;
+  flex-direction: row;
+  padding: 0 1.5rem; 
+  @include calc("width", "100% - 3rem");
+ 
+  @include breakpoint($tablet){    
+    @include calc("width", math.div(100, 12) * $val + "% - 3rem");
+  };
+  
+} 
+
+@mixin box-shadow($top, $right, $bottom, $left, $color) { 
+  -webkit-box-shadow: $top $right $bottom $left $color;
+  -moz-box-shadow: $top $right $bottom $left $color;
+  box-shadow: $top $right $bottom $left $color;
+   
+}
+ 

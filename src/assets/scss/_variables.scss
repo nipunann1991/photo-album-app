@@ -1,0 +1,26 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+ 
+/// Main brand colours
+$base-color: #282929; 
+$lighter-gray: #e8e8e8; 
+$white: #ffffff;
+
+
+///font sizes
+$base-font-size: 1.5rem;
+$logo-font-size: 3rem;
+ 
+
+/// Breakpoints
+$small-device: 320px; 
+$medium-device: 480px; 
+$tablet: 768px;
+$tablet-medium: 992px;
+$x-small-desktop: 1024px;
+$small-desktop: 1280px;
+$medium-desktop: 1440px;
+$large-desktop: 1600px; 
+

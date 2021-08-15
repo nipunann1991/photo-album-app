@@ -1,0 +1,19 @@
+<section class="album-page page container-fluid" [ngClass]="{'loader': !isLoaded}">
+    <div class="album-page-inner container">  
+        <ul class="album-list row"> 
+            <li class="album" *ngFor="let album of albumData; let i = index" (click)="viewPhotos(album.id, i)">
+                <div class="album-inner-wrapper">
+                    <div class="album-image"> 
+                        <img *ngIf="album.thumbnailUrl != ''" [src]="album.thumbnailUrl" alt="">
+                    </div>
+                    <div class="album-info">
+                        <h2 class="title">{{album.title}}</h2>
+                        <p>({{album.photosCount}}) Pictures</p>
+                    </div>
+                </div>
+            </li>
+        </ul> 
+        <p *ngIf="albumResults?.length == 0 && isLoaded">No albums found.</p>
+    </div>
+</section>
+

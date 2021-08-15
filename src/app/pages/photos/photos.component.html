@@ -1,0 +1,12 @@
+
+<section class="container-fluid page photos-page" [ngClass]="{'loader': !isLoaded }">
+    <div class="container photos-page-inner"> 
+        <h2>{{title}}</h2>
+        <ul class="photos-list">
+            <li class="photo" *ngFor="let photo of photoData"> 
+                <img [src]="photo.thumbnailUrl" [alt]="photo.title" [title]="photo.title">
+            </li>
+        </ul>  
+        <p *ngIf="photoData.length == 0 && isLoaded">No photos found.</p>
+    </div>
+</section>

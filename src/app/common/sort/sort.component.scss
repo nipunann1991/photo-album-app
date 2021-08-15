@@ -1,0 +1,16 @@
+@import "../../../styles.scss";
+ 
+label{
+    margin-right: 1rem;
+    display: none;
+
+    @include breakpoint($tablet){
+        display: inline-block;
+    } 
+}
+
+select#sort-by{ 
+    border: 1px darken($lighter-gray, 15%) solid;
+    padding: 0.7rem 1rem;
+    outline: 0;
+}

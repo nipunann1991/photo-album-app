@@ -1,0 +1,55 @@
+@import "../../../styles.scss";
+
+.album-page{ 
+    .album-page-inner{ 
+
+        ul.album-list{ 
+
+            li.album{
+                @include cols(6);
+                list-style: none;
+                margin-bottom: 3rem;
+                cursor: pointer;
+                
+                .album-inner-wrapper{ 
+                    @include box-shadow(0px, 1px, 10px, -1px,rgba(50, 50, 50, 0.2));
+                    padding: 1.5rem;
+
+                    @include breakpoint($tablet){
+                        @include flex();   
+                        flex-wrap: wrap; 
+                    }
+
+                    .album-image{
+                        @include flex();   
+                        justify-content: center;
+                        margin-bottom: 1.5rem;
+
+                        @include breakpoint($tablet){
+                            margin-bottom: 0;
+                            flex-basis: 0;
+                        }
+                    }
+
+                    .album-info{    
+                        text-align: center;
+                        overflow: hidden;  
+
+                        @include breakpoint($tablet){
+                            flex-basis: 0;
+                            flex-grow: 1;
+                            text-align: left;
+                            padding-left: 1.5rem; 
+                        }
+                        
+                        h2.title{  
+                            font-size: 2rem;
+                            margin-bottom: 0.5rem;  
+                            @include truncate-text();  
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
